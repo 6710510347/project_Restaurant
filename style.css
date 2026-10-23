@@ -1,0 +1,1059 @@
+:root {
+  --white: #FFFFFF;
+  --vista: #fefaf9;
+  --grain-salt: #d5d8df;
+  --white-vanilla: #ffecda;
+  --blush: #efbfc2;
+  --rosy-taupe: #cf969c;
+  --mauve: #a7626b;
+  --clay-rose: #aa5c56;
+  --oxbllod: #651f18;
+  --sand: #e6d2b9;
+  --nutmeg: #8c665a;
+  --bison: #d4b6a8;
+  --chocolate: #795138;
+  --espresso: #5b3113;
+  --text-dark: #2B2B2B;
+  --navbar-h: 64px; /* fallback; overwritten by JS with the navbar's real height */
+}
+ 
+.hero-bg {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+ 
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://images.pexels.com/photos/35744934/pexels-photo-35744934.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1.2) blur(1.5px);
+  z-index: -1;
+}
+ 
+.hero-bg h1 {
+  color: var(--vista) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+ 
+.hero-bg h4 {
+  color: var(--vista) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+ 
+.hero-bg h5 {
+  color: var(--sand) !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+ 
+/*ฟอนต์และสี*/
+body {
+  font-family: "Prompt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-dark);
+}
+ 
+/*พื้นหลัง*/
+.bg-dark {
+  background-color: var(--blush) !important;
+}
+ 
+.index,
+.membership {
+  background: var(--white-vanilla);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;    
+}
+ 
+.menu {
+  background: var(--vista);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat; 
+}
+ 
+.menu h1 {
+  color: var(--clay-rose) !important;  
+}
+
+.log-sign {
+  background: var(--sand);    
+}
+ 
+.sign {
+  background: var(--white-vanilla);
+}
+ 
+.out {
+  background: var(--white-vanilla);
+}
+
+.kitchen {
+  background: var(--white-vanilla);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat; 
+}
+ 
+body {
+  position: relative;
+}
+ 
+/* ---------- Navbar ---------- */
+/* ---------- Navbar color per page ---------- */
+.navbar {
+  background: var(--white) !important;
+}
+ 
+.login-hero {
+  background-color: var(--sand) !important;
+  color: var(--oxbllod) !important;
+}
+
+/* logo */
+.navbar-brand{
+  color: var(--espresso) !important;   /* ← เพิ่ม !important ตรงนี้ */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.navbar .nav-link {
+  color: var(--clay-rose) !important;   /* ← เพิ่ม !important ตรงนี้ */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.navbar .nav-link {
+  color: var(--clay-rose) !important;   /* ← สีปกติของลิงก์เมนูทุกอัน ตอนไม่ active */
+}
+
+/* navbar-toggler-icon (hamburger) is white by default from navbar-dark; invert so it shows on our white navbar */
+.navbar-toggler-icon {
+  filter: invert(1) grayscale(1);   /* ← บรรทัดใหม่ที่เพิ่มเข้ามา */
+}
+
+.navbar-toggler {
+  border-color: var(--bison) !important;   /* ← บรรทัดใหม่ที่เพิ่มเข้ามา */
+}
+ 
+ 
+/* keep navbar above content when scrolling (works with Bootstrap's sticky-top) */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+ 
+/* for a future tab/category bar sitting right under the navbar */
+.sticky-tabs {
+  position: sticky;
+  top: var(--navbar-h);
+  z-index: 1020;
+  background-color: var(--blush);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100vw;
+  max-width:none;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* keep navbar visually above the tabs bar when they meet while scrolling */
+.navbar.sticky-top {
+  z-index: 1030;
+}
+
+/* text color of the tab links (เมนูเครื่องดื่ม / เมนูของหวาน / เมนูอาหาร / ตะกร้าของคุณ) */
+.sticky-tabs .nav-link {
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+.sticky-tabs .nav-link:hover {
+  color: var(--oxbllod);
+}
+
+.sticky-tabs .nav-link.active {
+  color: var(--oxbllod);
+  border-bottom: 2px solid var(--oxbllod);
+}
+ 
+/* so anchor jumps land below the sticky navbar/tabs instead of behind them */
+section[id] {
+  scroll-margin-top: 160px;
+}
+ 
+/* ---------- Section titles ---------- */
+.section-title {
+  color: var(--espresso);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+ 
+/* ---------- Member / static card ---------- */
+.card-static {
+  background: var(--vista);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+ 
+/*ปุ่ม*/
+.btn-primary {
+  background-color: var(--clay-rose);
+  border-color: var(--clay-rose);
+  color: var(--white);
+  font-weight: 600;
+}
+ 
+.btn-primary:hover {
+  background-color: var(--oxbllod);
+  border-color: var(--oxbllod);
+  color: var(--white);
+}
+ 
+/* ---------- Login split layout ---------- */
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--espresso);  /* สีขอบดำรอบๆ ในภาพตัวอย่าง */
+}
+ 
+.auth-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+ 
+.log-sign .auth-image {
+  background-image: url("https://images.pexels.com/photos/8065863/pexels-photo-8065863.jpeg")
+}
+ 
+.sign .auth-image {
+  background-image: url("https://images.pexels.com/photos/5749808/pexels-photo-5749808.jpeg");
+}
+ 
+.auth-tab-label {
+  position: absolute;
+  top: 24px;
+  color: var(--white);
+  font-weight: 600;
+  opacity: 0.6;
+  text-decoration: none;
+}
+ 
+.auth-tab-label:hover {
+  color: var(--white);
+  opacity: 1;
+}
+ 
+.auth-tab-label-left {
+  left: 24px;
+}
+ 
+.auth-tab-label-right {
+  right: 24px;
+}
+ 
+.auth-panel {
+  flex: 1;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+ 
+.auth-form-box {
+  width: 100%;
+  max-width: 380px;
+}
+ 
+/* สลับด้าน: รูปไปขวา ฟอร์มไปซ้าย */
+.auth-reverse {
+  flex-direction: row-reverse;
+}
+ 
+/* ---------- Cards (general) ---------- */
+.card {
+  transition: transform 0.15s ease;
+}
+ 
+.card:hover {
+  transform: translateY(-4px);
+}
+ 
+/* card-static shares .card so cancel the lift effect on it */
+.card-static:hover {
+  transform: none;
+}
+
+#cart_menu .card:hover {
+  transform: none;
+}
+ 
+/* ---------- Menu cards ---------- */
+/* ---------- Menu cards (equal height) ---------- */
+#Drinks_menu .row,
+#Dessert_menu .row,
+#Food_menu .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Drinks_menu .col-3,
+#Dessert_menu .col-3,
+#Food_menu .col-3 {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.card-title {
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+/* ดันส่วนปุ่ม Order Now ให้อยู่ล่างสุดของการ์ดเสมอ */
+.card-body .modal-footer {
+  margin-top: auto;
+  border-top: none;
+  padding: 0.75rem 0 0 0;
+  background: transparent;
+}
+ 
+.card-img-top {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+  margin: 0;
+}
+ 
+/*บรรยากาศ*/
+.atmosphere-section {
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+}
+ 
+.atmosphere-inside {
+  background-color: var(--blush);
+}
+ 
+.atmosphere-outside {
+  background-color: var(--rosy-taupe);
+}
+ 
+/* ---------- Modals ---------- */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+}
+ 
+.modal-header {
+  background: var(--pink-light);
+  border-bottom: none;
+}
+ 
+.modal-title {
+  color: var(--espresso);
+  font-weight: 700;
+}
+ 
+.modal-body img {
+  margin-bottom: 12px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+ 
+.modal-dialog {
+  max-height: 90vh;
+}
+ 
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+ 
+/* ---------- About / atmosphere image frames ---------- */
+.about-img-frame {
+  height: 450px;
+  border: 1px solid var(--surface);
+}
+ 
+.about-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+ 
+/* ---------- Reusable square image link (for future galleries) ---------- */
+.img-link {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+ 
+.img-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+footer {
+  background-color: var(--nutmeg);
+}
+ 
+/* ---------- Footer text colors ---------- */
+footer h6 {
+  color: var(--vista) !important;
+}
+ 
+footer .text-secondary {
+  color: var(--grain-salt) !important;
+}
+ 
+footer .footer-link {
+  color: var(--pink-light) !important;
+}
+ 
+footer .footer-link:hover {
+  color: var(--white) !important;
+}
+
+/* kitchen */
+.btn-start-cook {
+  background-color: var(--oxbllod);
+  border-color: none;
+  color: var(--white);
+}
+
+.kitchen-card-header {
+  background-color: var(--blush) !important;
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+.status-filter-bg {
+  background-color: var(--white) !important; /* เปลี่ยนตรงนี้เป็นสีที่ต้องการ */
+}
+
+.order-type-badge {
+  background-color: var(--nutmeg) !important; /* เปลี่ยนสีตรงนี้ตามต้องการ */
+  color: var(--white) !important;
+}
+
+
+/* ================= admin_menu ================= */
+.admin_menu {
+  background: var(--white-vanilla);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+}
+.admin_menu main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.admin_menu .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin_menu .head h2 {
+  color: var(--espresso);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ปุ่ม (ชนกับ .btn ของ Bootstrap จึงกำหนดใหม่ภายใต้ .admin_menu) */
+.admin_menu .btn {
+  background: var(--clay-rose);
+  border: 1px solid var(--clay-rose);
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.admin_menu .btn:hover { background: var(--oxbllod); border-color: var(--oxbllod); color: var(--white); }
+.admin_menu .btn-o {
+  background: var(--white);
+  border: 1px solid var(--clay-rose);
+  color: var(--clay-rose);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.admin_menu .btn-o:hover { background: var(--blush); }
+.admin_menu .btn-o.yellow { background: #c96f00; border-color: #c96f00; color: #fff; font-weight: 500; }
+.admin_menu .btn-o.yellow:hover { background: #a35900; border-color: #a35900; }
+.admin_menu .btn-o.green  { background: #2e8b57; border-color: #2e8b57; color: #fff; font-weight: 500; }
+.admin_menu .btn-o.green:hover  { background: #236b43; border-color: #236b43; }
+.admin_menu .btn-o.red    { border-color: #c0392b; color: #c0392b; }
+
+/* ตาราง */
+.admin_menu .table-wrap {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  overflow-x: auto;
+}
+.admin_menu table { width: 100%; border-collapse: collapse; }
+.admin_menu th {
+  background: var(--blush);
+  color: var(--espresso);
+  text-align: left;
+  padding: 12px;
+  white-space: nowrap;
+}
+.admin_menu td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--sand);
+  vertical-align: middle;
+}
+.admin_menu tr.off td { opacity: .55; }
+.admin_menu td.empty { text-align: center; padding: 32px; color: var(--nutmeg); }
+.admin_menu .price { white-space: nowrap; }
+.admin_menu .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.admin_menu .actions .btn-o.red { margin-left: auto; }
+
+/* รูปย่อ (จุดที่ทำให้รูปใหญ่เต็มจอ) */
+.admin_menu .thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.admin_menu .thumb.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bison);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* badge สถานะ (ทับ .badge ของ Bootstrap) */
+.admin_menu .badge { padding: 4px 10px; border-radius: 999px; font-weight: 500; }
+.admin_menu .badge.ok  { background: #d8f0e0; color: #1f6b3b; }
+.admin_menu .badge.off { background: #e5e5e5; color: #666; }
+
+/* Dialog */
+.admin_menu dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  width: min(560px, 92vw);
+  max-height: 90vh;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+.admin_menu dialog::backdrop { background: rgba(0,0,0,.45); }
+.admin_menu dialog h3 { color: var(--espresso); margin-bottom: 16px; }
+.admin_menu .f { margin-bottom: 12px; }
+.admin_menu .f label { display: block; font-weight: 500; margin-bottom: 4px; }
+.admin_menu .f input[type="text"],
+.admin_menu .f input[type="number"],
+.admin_menu .f textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--bison);
+  border-radius: 8px;
+  font-family: inherit;
+}
+.admin_menu .f textarea { min-height: 70px; resize: vertical; }
+.admin_menu .f.check { display: flex; align-items: center; gap: 8px; }
+.admin_menu .row { display: flex; gap: 12px; margin: 0; }
+.admin_menu .row .f { flex: 1; }
+.admin_menu .preview {
+  width: 100px; height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: block;
+}
+.admin_menu .preview[hidden] { display: none; }
+.admin_menu .hint { font-size: .8rem; color: var(--nutmeg); }
+.admin_menu .btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+/* Toast */
+.admin_menu #toast {
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2e8b57;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+  z-index: 2000;
+}
+.admin_menu #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.admin_menu #toast.err { background: #c0392b; }
+
+/* ---------- Admin pages (admin.php / admin_members.php / admin_rewards.php) ---------- */
+body.admin {
+  background: var(--white-vanilla);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+}
+body.admin .navbar { box-shadow: 0 2px 8px rgba(91, 49, 19, .12); }
+body.admin .navbar .nav-link.active { color: var(--oxbllod) !important; border-bottom: 2px solid var(--oxbllod); }
+body.admin h2, body.admin h4 { color: var(--espresso); font-weight: 600; }
+
+body.admin .card {
+  background: var(--vista);
+  border: 1px solid var(--bison);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(91, 49, 19, .08);
+}
+body.admin .card p:last-child {
+  font-size: 1.6rem; font-weight: 600; color: var(--clay-rose); margin-bottom: 0;
+}
+
+body.admin .stat-card { padding: 2.25rem 1rem; }
+body.admin .stat-card p:first-child { font-size: 1.2rem; }
+body.admin .stat-card p:last-child { font-size: 2.4rem; }
+
+body.admin .table { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(91, 49, 19, .08); }
+body.admin .table thead th { background: var(--blush); color: var(--espresso); border-bottom: 2px solid var(--rosy-taupe); }
+body.admin .table-hover tbody tr:hover > * { background: var(--white-vanilla); }
+
+body.admin .btn:not(.btn-outline-secondary):not(.btn-outline-danger):not(.btn-primary) {
+  background: var(--clay-rose); border-color: var(--clay-rose); color: var(--white);
+}
+body.admin .btn:not(.btn-outline-secondary):not(.btn-outline-danger):not(.btn-primary):hover {
+  background: var(--oxbllod); border-color: var(--oxbllod);
+}
+body.admin .form-control:focus {
+  border-color: var(--rosy-taupe);
+  box-shadow: 0 0 0 .2rem rgba(207, 150, 156, .3);
+}
+body.admin .form-check-input:checked { background-color: var(--clay-rose); border-color: var(--clay-rose); }
+
+/*admin_inventory*/
+.admin_inventory {
+  background: var(--white-vanilla);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23aa5c56' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='50' cy='40' r='4'/%3E%3Ccircle cx='80' cy='15' r='5'/%3E%3Ccircle cx='35' cy='75' r='5'/%3E%3Ccircle cx='70' cy='70' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+}
+.admin_inventory main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.admin_inventory .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.admin_inventory .head h2 {
+  color: var(--espresso);
+  font-weight: 700;
+  margin: 0;
+}
+.admin_inventory .btn {
+  background: var(--clay-rose);
+  border: 1px solid var(--clay-rose);
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.admin_inventory .btn:hover { background: var(--oxbllod); border-color: var(--oxbllod); color: var(--white); }
+.admin_inventory .btn-o {
+  background: var(--white);
+  border: 1px solid var(--clay-rose);
+  color: var(--clay-rose);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+
+/* จัดการสต็อก */
+.admin_inventory .page-title,
+.kitchen .page-title {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 16px 0;
+  text-align: center;
+}
+.admin_inventory .page-title h1,
+.kitchen .page-title h1 { color: var(--espresso); font-weight: 700; font-size: 2rem; margin: 0; }
+.admin_inventory .page-title p,
+.kitchen .page-title p  { color: var(--nutmeg); margin: 4px 0 0; }
+
+/* หัวข้อแต่ละส่วน + ปุ่มเพิ่ม */
+.admin_inventory .text {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.admin_inventory h2 {
+  color: var(--espresso); font-weight: 700; font-size: 1.4rem; margin: 0;
+}
+.admin_inventory h2.center { margin: 36px 0 14px; text-align: left; }
+
+/* ---------- ตารางวัตถุดิบ (การ์ดสีขาว) ---------- */
+.admin_inventory .table-wrap {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(91, 49, 19, .10);
+  overflow-x: auto;
+}
+.admin_inventory table { width: 100%; border-collapse: collapse; }
+.admin_inventory th {
+  background: var(--blush); color: var(--espresso);
+  text-align: left; padding: 12px; white-space: nowrap;
+}
+.admin_inventory td {
+  padding: 10px 12px; border-top: 1px solid var(--sand); vertical-align: middle;
+}
+.admin_inventory td.empty { text-align: center; padding: 32px; color: var(--nutmeg); }
+.admin_inventory #ingBody td:nth-child(3) { font-weight: 600; }
+.admin_inventory #ingBody tr.row-ok:hover td { background: var(--vista); }
+.admin_inventory #ingBody tr.row-low td { background: #fff6dd; }
+.admin_inventory #ingBody tr.row-out td { background: #fdeaea; }
+
+.admin_inventory .adjust  { display: flex; gap: 6px; align-items: center; }
+.admin_inventory .adjust input {
+  width: 120px; padding: 5px 8px;
+  border: 1px solid var(--bison); border-radius: 6px; font-family: inherit;
+}
+.admin_inventory .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.admin_inventory .btn-o:hover { background: var(--blush); }
+.admin_inventory .btn-o.red   { border-color: #c0392b; color: #c0392b; }
+
+/* ป้ายสถานะ (ทับ .badge ของ Bootstrap) */
+.admin_inventory .badge { padding: 4px 12px; border-radius: 999px; font-weight: 500; }
+.admin_inventory .badge.ok  { background: #d8f0e0; color: #1f6b3b; }
+.admin_inventory .badge.low { background: #ffe9a8; color: #7a5a00; }
+.admin_inventory .badge.out { background: #f8d0d0; color: #a02020; }
+
+/* ---------- การ์ดสูตรเมนู ---------- */
+.admin_inventory .card {
+  display: block;
+  background: var(--white);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(91, 49, 19, .10);
+  padding: 22px;
+  margin-bottom: 40px;
+}
+.admin_inventory .lbl { display: block; font-weight: 600; margin-bottom: 6px; }
+.admin_inventory select {
+  padding: 8px 10px; border: 1px solid var(--bison);
+  border-radius: 8px; background: var(--white); font-family: inherit;
+}
+.admin_inventory select.main { width: 100%; }
+.admin_inventory .sub { font-weight: 600; color: var(--espresso); margin: 18px 0 8px; }
+.admin_inventory table.recipe { border: 1px solid var(--sand); }
+.admin_inventory input.qty {
+  width: 110px; padding: 5px 8px;
+  border: 1px solid var(--bison); border-radius: 6px; font-family: inherit;
+}
+.admin_inventory .tag {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: .8rem; background: #eee; color: #555;
+}
+.admin_inventory .tag.hot  { background: #ffe1d6; color: #b3401c; }
+.admin_inventory .tag.cold { background: #dff0fb; color: #1e6a9b; }
+
+/* แถวเพิ่มวัตถุดิบเข้าสูตร */
+.admin_inventory .add-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+  margin-top: 18px; padding: 16px;
+  background: var(--vista); border: 1px dashed var(--bison); border-radius: 10px;
+}
+.admin_inventory .add-row .col { flex: 1 1 160px; display: flex; flex-direction: column; }
+.admin_inventory .add-row label { font-weight: 500; font-size: .9rem; margin-bottom: 4px; }
+.admin_inventory .add-row label.check { flex-direction: row; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.admin_inventory .add-row select,
+.admin_inventory .add-row input[type="number"] {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--bison);
+  border-radius: 8px; font-family: inherit;
+}
+.admin_inventory .hint { font-size: .8rem; color: var(--nutmeg); margin: 10px 0 0; }
+
+/* ---------- Popup เพิ่ม/แก้ไขวัตถุดิบ ---------- */
+.admin_inventory dialog {
+  border: none; border-radius: 12px; padding: 24px;
+  width: min(480px, 92vw); box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+.admin_inventory dialog::backdrop { background: rgba(0,0,0,.45); }
+.admin_inventory dialog h3 { color: var(--espresso); margin-bottom: 16px; }
+.admin_inventory .f { margin-bottom: 12px; }
+.admin_inventory .f label { display: block; font-weight: 500; margin-bottom: 4px; }
+.admin_inventory .f input[type="text"],
+.admin_inventory .f input[type="number"] {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--bison);
+  border-radius: 8px; font-family: inherit;
+}
+.admin_inventory .btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+
+/* ---------- Toast ---------- */
+.admin_inventory #toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2e8b57; color: #fff; padding: 10px 20px; border-radius: 8px;
+  opacity: 0; pointer-events: none; transition: .25s; z-index: 2000;
+}
+.admin_inventory #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.admin_inventory #toast.err  { background: #c0392b; }
+
+/*ปุ่มปรับ/แก้ไข/ลบ*/
+
+/* ---------- สีปุ่มในตารางวัตถุดิบ (ปรับ / แก้ไข / ลบ) ---------- */
+/* ---------- สีปุ่มในตารางวัตถุดิบ (พื้นสี ตัวอักษรขาว) ---------- */
+.admin_inventory .btn-o[data-adjust] {
+  background: #2e8b57; border-color: #2e8b57; color: #fff; font-weight: 500;
+}
+.admin_inventory .btn-o[data-adjust]:hover { background: #236b43; border-color: #236b43; }
+
+.admin_inventory .btn-o[data-edit] {
+  background: #c96f00; border-color: #c96f00; color: #fff; font-weight: 500;
+}
+.admin_inventory .btn-o[data-edit]:hover { background: #a35900; border-color: #a35900; }
+
+.admin_inventory .btn-o.red[data-del] {
+  background: #c0392b; border-color: #c0392b; color: #fff; font-weight: 500;
+}
+.admin_inventory .btn-o.red[data-del]:hover { background: #962d22; border-color: #962d22; }
+
+
+/* สูตร */
+.admin_inventory .btn-o[data-save] {
+  background: #2e8b57; border-color: #2e8b57; color: #fff; font-weight: 500;
+}
+.admin_inventory .btn-o[data-save]:hover { background: #236b43; border-color: #236b43; }
+
+.admin_inventory .btn-o.red[data-rdel] {
+  background: #c0392b; border-color: #c0392b; color: #fff; font-weight: 500;
+}
+.admin_inventory .btn-o.red[data-rdel]:hover { background: #962d22; border-color: #962d22; }
+
+
+/* ---------- ปุ่ม Logout ในแถบเมนู ให้ขนาดเท่ากันทุกหน้า ---------- */
+.navbar .btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ===== หน้าจัดการของรางวัล ===== */
+.reward-actions {
+  display: flex;
+  justify-content: space-between;  /* ลบไปชิดขวาสุดของคอลัมน์ */
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding-right: 10px;             /* ขยับปุ่มลบเข้ามาทางซ้าย ปรับค่าได้ */
+}
+
+/* ให้คอลัมน์ "จัดการ" กว้างพอ ปุ่มลบจึงไปชิดขอบขวาของตาราง */
+#tab-rewards table th:last-child,
+#tab-rewards table td:last-child {
+  width: 40%;
+}
+
+/* แก้ไข = ฟ้า */
+.reward-btn-edit { background: #3b82f6; }
+.reward-btn-edit:hover { background: #2563eb; color: #fff; }
+
+/* ปิด = ส้ม */
+.reward-btn-off { background: #f59e0b; }
+.reward-btn-off:hover { background: #d97706; color: #fff; }
+
+/* เปิด = เขียว */
+.reward-btn-on { background: #16a34a; }
+.reward-btn-on:hover { background: #15803d; color: #fff; }
+
+/* ลบ = ขอบแดง พอชี้เป็นพื้นแดง */
+.reward-btn-delete {
+  background: #fff;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+.reward-btn-delete:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* ===== ปุ่มในหน้าจัดการของรางวัล ===== */
+
+/* แก้ไข = เหลือง (ตัวหนังสือดำเพื่อให้อ่านชัด) */
+/* แก้ไข = เหลือง ตัวหนังสือขาว */
+#tab-rewards .reward-actions .btn.reward-btn-edit {
+  background: #facc15 !important;
+  border-color: #facc15 !important;
+  color: #fff !important;
+}
+#tab-rewards .reward-actions .btn.reward-btn-edit:hover {
+  background: #eab308 !important;
+  border-color: #eab308 !important;
+  color: #fff !important;
+}
+
+/* ปิด = กรอบเขียว พื้นขาว */
+#tab-rewards .reward-actions .btn.reward-btn-off {
+  background: #fff !important;
+  border: 1px solid #16a34a !important;
+  color: #16a34a !important;
+}
+#tab-rewards .reward-actions .btn.reward-btn-off:hover {
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #fff !important;
+}
+
+/* เปิด (ตอนสถานะปิดอยู่) = เทา เพื่อแยกจากปุ่ม "ปิด" */
+#tab-rewards .reward-actions .btn.reward-btn-on {
+  background: #6b7280 !important;
+  border-color: #6b7280 !important;
+  color: #fff !important;
+}
+#tab-rewards .reward-actions .btn.reward-btn-on:hover {
+  background: #4b5563 !important;
+  border-color: #4b5563 !important;
+}
+
+/* ลบ = แดงเต็มปุ่ม */
+#tab-rewards .reward-actions .btn.reward-btn-delete {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #fff !important;
+}
+#tab-rewards .reward-actions .btn.reward-btn-delete:hover {
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+/* ปุ่มย้อนกลับใต้ navbar */
+header .back-link {
+  color: var(--clay-rose);
+  font-weight: 700;          /* หนาขึ้น */
+  font-size: 1.1rem;
+  margin-top: 16px;          /* เลื่อนลงมา ปรับตามต้องการ */
+  padding-bottom: 0;
+}
+
+/* ลูกศร < ให้หนาขึ้นด้วย */
+header .back-link .bi {
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
+/* ปุ่มย้อนกลับใต้ navbar */
+header .back-link {
+  color: var(--clay-rose);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 0;             /* ห้ามใช้ margin-top เพราะจะดันกล่องสีชมพูลงมา */
+  padding-top: 16px;         /* เลื่อนปุ่มลงมาแทน ปรับค่าได้ */
+  padding-left: 16px;        /* ห่างขอบซ้ายนิดนึง */
+  padding-bottom: 0;
+}
+
+header .back-link .bi {
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
+/* ข้อความหัวข้อในแถบสีชมพู */
+header .text-center h1,
+header .text-center h3 {
+  color: #5a2e1f !important;   /* น้ำตาลเข้ม */
+}
+
+/* ปุ่มแลกของรางวัลในหน้าใช้คะแนน */
+#reward-grid .btn.btn-primary {
+  background-color: var(--oxbllod) !important;
+  border-color: var(--clay-rose) !important;
+  color: #fff !important;
+}
+#reward-grid .btn.btn-primary:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+/* ปุ่มที่ยังกดไม่ได้ (แต้มไม่พอ / ของหมด) */
+#reward-grid .btn.btn-primary:disabled {
+  background-color: #a7626b!important;
+  border-color: #d9c2bb !important;
+  color: #fff !important;
+  opacity: 1;
+}
+
+/* ป้ายสถานะในหน้าของรางวัล (สไตล์เดียวกับ "เปิดขาย") */
+#tab-rewards .badge.text-bg-success {
+  background-color: #d4f0df !important;  /* เขียวอ่อน */
+  color: #1e5a34 !important;             /* ตัวหนังสือเขียวเข้ม */
+  border-radius: 50rem;                  /* ทรงแคปซูล */
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* สถานะ "ปิด" ให้โทนอ่อนเข้าชุดกัน */
+#tab-rewards .badge.text-bg-secondary {
+  background-color: #e5e7eb !important;
+  color: #4b5563 !important;
+  border-radius: 50rem;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* เว้นระยะระหว่างคอลัมน์ สต็อก กับ สถานะ */
+#tab-rewards table th:nth-child(4),
+#tab-rewards table td:nth-child(4) {
+  padding-left: 40px;   /* ปรับค่าได้ */
+}
+
+/* เพิ่มระยะห่างระหว่างปุ่มแก้ไข กับ ปิด */
+#tab-rewards .reward-actions > .d-flex {
+  gap: 16px !important;   /* ปรับค่าได้ (เดิมคือ 4px) */
+}
+

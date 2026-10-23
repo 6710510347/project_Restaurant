@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPuffGirls Restaurant - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="menu">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PowerPuffGirls Restaurant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav w-100">
+                    <a class="nav-link" href="home.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="Menu.html">Menu</a>
+                    <a href="membership.php" class="nav-link ms-auto me-2">Membership</a>
+                    <a href="Login-Signin.html" class="btn btn-primary btn-sm mt-2 mt-sm-0">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function setNavbarHeight() {
+            const nav = document.querySelector('.navbar');
+            if (nav) {
+                document.documentElement.style.setProperty('--navbar-h', nav.offsetHeight + 'px');
+            }
+        }
+        setNavbarHeight();
+        window.addEventListener('resize', setNavbarHeight);
+    </script>
+
+    <div class="bg-dark text-white pb-2">
+        <h1 class="text-center pt-4 mb-0">เมนูทางร้าน</h1>
+    </div>
+        
+    <div class="container sticky-tabs d-flex justify-content-between align-items-center">
+        <ul class="nav nav-tabs border-0">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#Drinks_menu">เมนูเครื่องดื่ม</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Dessert_menu">เมนูของหวาน</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Food_menu">เมนูอาหาร</a>
+            </li>
+        </ul>
+        <ul class="nav nav-tabs border-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#cart_menu">ตะกร้าของคุณ</a>
+            </li>
+        </ul>
+    </div>
+ 
+        <section id="Drinks_menu" class="container my-5">
+            <h3 class="text-center mb-4">เมนูเครื่องดื่ม</h3><br>
+            <div class="row"></div>
+        </section>
+        <br>
+
+        <section id="Dessert_menu" class="container my-5">
+            <h3 class="text-center mb-4">เมนูของหวาน</h3><br>
+            <div class="row"></div>
+        </section>
+        <br>
+
+        <section id="Food_menu" class="container my-5">
+            <h3 class="text-center mb-4">เมนูอาหาร</h3><br>
+            <div class="row"></div>
+        </section>
+        <br>
+
+    <section>
+        <div id="cart_menu" class="container -mb-5">
+            <div class="card p-3" style="max-width: 400px; margin: 0 auto;">
+                <h5 class="text-center">ตะกร้าของคุณ</h5>
+                <div id="cart-list" class="mb-3"></div>
+                <p class="text-end fw-bold mb-1">รวม : <span id="cart-total">0</span> บาท</p>
+
+                <div class="mb-3" id="coupon-wrapper">
+                    <label class="form-label fw-bold">ใช้คูปอง</label>
+                    <select id="coupon-id" class="form-select">
+                        <option value="">-- ไม่ใช้คูปอง --</option>
+                    </select>
+                    <div id="coupon-hint" class="form-text"></div>
+                </div>
+                <p class="text-end text-success mb-1" id="discount-row" style="display: none;">ส่วนลด : -<span id="cart-discount">0</span> บาท</p>
+                <p class="text-end fw-bold" id="net-row" style="display: none;">ยอดสุทธิ : <span id="cart-net">0</span> บาท</p>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">ประเภทการสั่ง</label>
+                    <select id="order-type" class="form-select">
+                        <option value="dine_in_walkin">ทานที่ร้าน</option>
+                        <option value="takeaway">รับกลับบ้าน</option>
+                        <option value="pre_order">สั่งล่วงหน้า</option>
+                    </select>
+                </div>
+
+                <div class="mb-3" id="table-wrapper" style="display: none;">
+                    <label class="form-label fw-bold">หมายเลขโต๊ะ</label>
+                    <select id="table-id" class="form-select">
+                        <option value="">-- เลือกโต๊ะ --</option>
+                    </select>
+                </div>
+
+                <div class="mb-3" id="pickup-time-wrapper" style="display: none;">
+                    <label class="form-label fw-bold">เวลารับ</label>
+                    <input type="text" id="pickup-time" class="form-control" placeholder="เลือกวันและเวลา" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">ชื่อผู้สั่ง</label>
+                    <input type="text" id="customer-name" class="form-control" placeholder="ชื่อของคุณ">
+                </div>
+                <button id="checkout-btn" class="btn w-100" style="background-color: #aa5c56; color: #ffffff;">ยืนยันคำสั่งซื้อ</button>
+                <div id="order-result" class="mt-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="auto_refresh.js"></script>
+    <script src="menu.js"></script>
+    <script src="cart.js"></script>
+
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', e => {
+        e.preventDefault();
+        fetch('auth_api.php', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+                body:'action=logout&group=customer'}).finally(() => location.href = 'Login-Signin.html');
+        });
+    </script>
+</body>
+</html>
